@@ -37,6 +37,10 @@ namespace WebAPI.Controllers.API
 
             Debug.WriteLine($"Title: {title}, Author: {author}, DateTime: {postDate}");
 
+            // Hm, blogPost.Title is also dynamic type and needs type casting
+            title = ((string)blogPost.Title).Replace("is", "& daynamic type are"); 
+            blogPost.Title = title;
+
             return blogPost;
         }
 
